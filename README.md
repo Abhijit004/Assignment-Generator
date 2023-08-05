@@ -3,7 +3,7 @@
 
 A small Python program to take filename inputs and generate a Assignment report out of them with html and css.
 ## Aim behind this Program :gem:
-When it comes to creating a proper report of any assignment(containing codes and all), I wished if there could exist a program which would take my filepaths as input and generate the report for me, where every code block would be prettified(A word document would ). Since I failed to find one, I created one for myself :sweat_smile:
+When it comes to creating a proper report of any assignment(containing codes and all), I wished if there could exist a program which would take my filepaths as input and generate the report for me, where every code block would be prettified(in word editor, a picture insertion ~ destruction :sweat:). Since I failed to find one, I created one for myself :sweat_smile:
 
 ## Some Implementation details :hammer_and_pick:
 * The program is heavily inspired by [Stackedit's](https://stackedit.io) Markdown to HTML rendering. I highly recommend using **Stackedit** for any markdown related works (I am writing this `README.md` using Stackedit only :grin:)
@@ -32,6 +32,7 @@ python toHTML.py
   * Take as many `png` images the user wishes to have for that question
 * **Ask for a confirmation**
 * **The final product: `report.html`**
+
 <img width="707" alt="Screenshot" src="https://github.com/Abhijit004/Assignment-Generator/assets/133393475/008ddce4-5f78-404f-be16-64ecf972e8dd">
 
 ## Licence
