@@ -1,4 +1,6 @@
 ﻿# Assignment-Generator
+ <img width="913" alt="Screenshot 2023-08-05 090424" src="https://github.com/Abhijit004/Assignment-Generator/assets/133393475/ed250804-baf5-4c93-ac27-eb1dcd4317ba">
+
 A small Python program to take filename inputs and generate a Assignment report out of them with html and css.
 ## Aim behind this Program :gem:
 When it comes to creating a proper report of any assignment(containing codes and all), I wished if there could exist a program which would take my filepaths as input and generate the report for me, where every code block would be prettified(A word document would ). Since I failed to find one, I created one for myself :sweat_smile:
@@ -30,6 +32,7 @@ python toHTML.py
   * Take as many `png` images the user wishes to have for that question
 * **Ask for a confirmation**
 * **The final product: `report.html`**
+<img width="707" alt="Screenshot" src="https://github.com/Abhijit004/Assignment-Generator/assets/133393475/008ddce4-5f78-404f-be16-64ecf972e8dd">
 
 ## Licence
-The project is under MIT Licence.
+The project is under [MIT License](./LICENSE)
