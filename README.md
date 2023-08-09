@@ -10,7 +10,11 @@ When it comes to creating a proper report of any assignment(containing codes and
 * Styles of the html file are heavily inspired by [StackEdit](https://stackedit.io/), a great online markdown editor. Infact, this README is created in Stackedit's editor only :grin:!
 * I am using [Prism](https://prismjs.com/),  a lightweight, extensible syntax highlighter for highlighting the code blocks, it works stunningly great !
 ## Usage :computer:
-Run the c file `toHTML.c`. Thats it !
+* Download three files from here:
+  * prism.js
+  * prism.css
+  * toHTML.c
+* Run the c file `toHTML.c`. Thats it !
 ```bash
 gcc toHTML.c -o toHTML && ./toHTML
 ```

@@ -82,9 +82,10 @@ int main() {
         }
         char text[10000]; // Adjust buffer size as needed
         fread(text, 1, sizeof(text), f);
+
         replaceSubstring(text, "<", "&lt;");
         replaceSubstring(text, ">", "&gt;");
-        replaceSubstring(text, ";", "&semi;");
+
         fclose(f);
 
         char temp[10000]; // Adjust buffer size as needed
