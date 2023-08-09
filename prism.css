@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400&family=Poppins:wght@500&display=swap');
+/* PrismJS 1.29.0
+https://prismjs.com/download.html#themes=prism-okaidia&languages=clike+c&plugins=line-numbers */
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+	font-style: italic;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color:#e6db74;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f92672;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #a6e22e;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+pre[class*="language-"].line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+	white-space: pre-wrap;
+}
+
+pre[class*="language-"].line-numbers > code {
+	position: relative;
+	white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+
+
+/*stackedit css*/
+
+/* markdown css*/
+
+html {
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0;
+    background-color: hsl(0, 0%, 100%);
+    color:#2e2e2e;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+    margin: .67em 0;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible
+}
+
+b,
+strong {
+    font-weight: inherit;
+    font-weight: bolder;
+}
+
+
+
+img {
+    border-style: none;
+    border-radius: 0.5em;
+}
+
+
+/*html {
+    color: rgba(0, 0, 0, .75);
+    font-size: 16px;
+    font-family: Lato, Helvetica Neue, Helvetica, sans-serif;
+    font-variant-ligatures: common-ligatures;
+    line-height: 1.67;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}*/
+
+blockquote,
+dl,
+ol,
+p,
+pre,
+ul {
+    margin: 1.2em 0
+}
+
+h1,
+h2,
+h3
+{
+    margin: 1em 0;
+    /* line-height: 1.33 */
+}
+
+h1:after {
+    content: '';
+    display: block;
+    position: relative;
+    top: .33em;
+    border-bottom: 4px solid hsla(0, 0%, 50%, .33)
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+    margin: 0
+}
+
+dt {
+    font-weight: 700
+}
+
+
+
+hr {
+    border: 0;
+    border-top: 4px solid hsla(0, 0%, 50%, .33);
+    margin: 2em 0
+}
+
+.toc ul {
+    list-style-type: none;
+    padding-left: 20px
+}
+
+table {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+td,
+th {
+    border-right: 1px solid #dcdcdc;
+    padding: 8px 12px
+}
+
+td:last-child,
+th:last-child {
+    border-right: 0
+}
+
+td {
+    border-top: 1px solid #dcdcdc
+}
+
+img {
+    width: 100%
+}
+
+.stackedit__html {
+    margin-bottom: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 950px
+}
+
+pre {
+	width: 100;
+}
