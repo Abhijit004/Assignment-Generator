@@ -48,7 +48,7 @@ gcc toHTML.c -o toHTML && toHTML
   @media print {
     /* Adjust page size for printing */
     @page {
-      size: 210mm 500mm; //increase the '500mm'
+      size: 310mm 500mm; /*increase the '500mm'*/
     }
   }
   ```
