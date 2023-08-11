@@ -18,6 +18,15 @@ void clearInputBuffer() {
     } while (c != '\n');
 }
 
+void readFile(FILE *f, char text[]) {
+    char ch; int i=0;
+    while ((ch = fgetc(f)) != EOF) {
+        text[i++] = ch;
+    }
+    text[i++] = '\0';
+    fclose(f);
+}
+
 int main () {
     char name[100], group[100], roll[100], assignmentNo[100];
     int qno;
@@ -35,7 +44,7 @@ int main () {
              "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Report</title><link rel=\"stylesheet\" href=\"prism.css\"/><script src=\"prism.js\" defer></script></head><body class='stackedit'><div class='stackedit__html'><hr>Name: %s<br>Group: %s<br>RollNo: %s<br><h1>&#128203;Assignment %s</h1>",
              name, group, roll, assignmentNo);
 
-    // Menu driven input
+    // Menu driven input 
     clearInputBuffer();
     for (int i = 1; i <= qno; i++) {
         char qLine[1000];
@@ -52,17 +61,9 @@ int main () {
             i -= 1; continue;
         }
 
-        // Determine the file size
-        fseek(f, 0, SEEK_END);
-        long file_size = ftell(f);
-        fseek(f, 0, SEEK_SET);
-
-        char text[10000]; // Adjust buffer size as needed
-        fread(text, 1, file_size, f);
-        text[file_size] = '\0';
-        fclose(f);
-
-        // replace the < and >
+        char text[10000];
+        readFile(f, text);
+        // replacing the < and > tags
         replaceSubstring(text, "<", "&lt;");
         replaceSubstring(text, ">", "&gt;");
 

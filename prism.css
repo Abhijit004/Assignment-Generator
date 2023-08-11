@@ -146,13 +146,12 @@ pre[class*="language-"].line-numbers > code {
 	width: 3em; /* works for line-numbers below 1000 lines */
 	font-size: 0.98em;
 	letter-spacing: -1px;
-	border-right: 1px solid #999;
+	border-right: 2px solid hsl(0, 0%, 45%);
 
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-
 }
 
 	.line-numbers-rows > span {
@@ -186,11 +185,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-h1 {
-    font-size: 3em;
-    margin: .67em 0;
-}
-
 hr {
     box-sizing: content-box;
     height: 0;
@@ -210,17 +204,6 @@ img {
     border-radius: 0.3em;
 }
 
-
-/*html {
-    color: rgba(0, 0, 0, .75);
-    font-size: 16px;
-    font-family: Lato, Helvetica Neue, Helvetica, sans-serif;
-    font-variant-ligatures: common-ligatures;
-    line-height: 1.67;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}*/
-
 blockquote,
 dl,
 ol,
@@ -235,7 +218,13 @@ h2,
 h3
 {
     margin: 1em 0;
-    /* line-height: 1.33 */
+    font-weight: lighter;
+}
+
+h1 {
+    font-size: 3em;
+    margin: .67em 0;
+	font-weight: bolder;
 }
 
 h1:after {
