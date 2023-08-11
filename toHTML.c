@@ -3,90 +3,68 @@
 #include <string.h>
 
 void replaceSubstring(char *str, const char *oldSubstr, const char *newSubstr) {
-    int oldLen = strlen(oldSubstr);
-    int newLen = strlen(newSubstr);
     char *ptr = strstr(str, oldSubstr);
     while (ptr != NULL) {
-        // Calculate the length of the remaining string
-        int remainingLen = strlen(ptr + oldLen);
-
-        // Shift the remaining characters to accommodate the new substring
-        memmove(ptr + newLen, ptr + oldLen, remainingLen + 1);
-
-        // Copy the new substring
-        memcpy(ptr, newSubstr, newLen);
-
-        // Search for the next occurrence
-        ptr = strstr(ptr + newLen, oldSubstr);
+        memmove(ptr + strlen(newSubstr), ptr + strlen(oldSubstr), strlen(ptr + strlen(oldSubstr)) + 1);
+        memcpy(ptr, newSubstr, strlen(newSubstr));
+        ptr = strstr(ptr + strlen(newSubstr), oldSubstr);
     }
 }
 
-int main() {
-    char name[100];
-    char group[100];
-    char roll[100];
-    char assignmentNo[100];
+void clearInputBuffer() {
+    int c;
+    do {
+        c = getchar();
+    } while (c != '\n');
+}
+
+int main () {
+    char name[100], group[100], roll[100], assignmentNo[100];
     int qno;
 
-    // User input
-    printf("Name: ");
-    fgets(name, sizeof(name), stdin);
-    name[strcspn(name, "\n")] = '\0';
+    //User input
+    printf("Name: "); gets(name);
+    printf("Group: "); gets(group);
+    printf("roll: "); gets(roll);
+    printf("Assignment No: "); gets(assignmentNo);
+    printf("No of Questions: "); scanf("%d", &qno);
 
-    printf("Group: ");
-    fgets(group, sizeof(group), stdin);
-    group[strcspn(group, "\n")] = '\0';
+    char* htmlcode = (char *) malloc(1000000);
 
-    printf("Roll No: ");
-    fgets(roll, sizeof(roll), stdin);
-    roll[strcspn(roll, "\n")] = '\0';
-
-    printf("Assignment No: ");
-    fgets(assignmentNo, sizeof(assignmentNo), stdin);
-    assignmentNo[strcspn(assignmentNo, "\n")] = '\0';
-
-    printf("No of Questions: ");
-    scanf("%d", &qno);
-    getchar(); // Consume the newline character
-
-    // Construct HTML code
-    char *htmlcode;
-    int bufferSize = 10000; // Adjust buffer size as needed
-    htmlcode = (char *)malloc(bufferSize);
-    snprintf(htmlcode, bufferSize,
-             "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Code block rendering</title><link rel=\"stylesheet\" href=\"prism.css\"/><script src=\"prism.js\" defer></script></head><body class='stackedit'><div class='stackedit__html'>Name: %s<br>Group: %s<br>RollNo: %s<br><h1>&#128203;Assignment %s</h1>",
+    snprintf(htmlcode, 10000000,
+             "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Report</title><link rel=\"stylesheet\" href=\"prism.css\"/><script src=\"prism.js\" defer></script></head><body class='stackedit'><div class='stackedit__html'><hr>Name: %s<br>Group: %s<br>RollNo: %s<br><h1>&#128203;Assignment %s</h1>",
              name, group, roll, assignmentNo);
 
     // Menu driven input
+    clearInputBuffer();
     for (int i = 1; i <= qno; i++) {
         char qLine[1000];
         char cfile[100];
         char output[1000];
-
-        printf("\tQline: ");
-        fgets(qLine, sizeof(qLine), stdin);
-        qLine[strcspn(qLine, "\n")] = '\0';
-
-        printf("\tC file: ");
-        fgets(cfile, sizeof(cfile), stdin);
-        cfile[strcspn(cfile, "\n")] = '\0';
-
-        printf("\tPng files sep by space: ");
-        fgets(output, sizeof(output), stdin);
-        output[strcspn(output, "\n")] = '\0';
+        
+        printf("\tQline: "); gets(qLine);
+        printf("\tC file: ");gets(cfile);
+        printf("\tPng files sep by space: "); gets(output);
 
         FILE *f = fopen(cfile, "r");
         if (f == NULL) {
-            perror("Error opening file");
-            return 1;
+            printf("The given C file does not exist. Try giving again\n\n");
+            i -= 1; continue;
         }
-        char text[10000]; // Adjust buffer size as needed
-        fread(text, 1, sizeof(text), f);
 
+        // Determine the file size
+        fseek(f, 0, SEEK_END);
+        long file_size = ftell(f);
+        fseek(f, 0, SEEK_SET);
+
+        char text[10000]; // Adjust buffer size as needed
+        fread(text, 1, file_size, f);
+        text[file_size] = '\0';
+        fclose(f);
+
+        // replace the < and >
         replaceSubstring(text, "<", "&lt;");
         replaceSubstring(text, ">", "&gt;");
-
-        fclose(f);
 
         char temp[10000]; // Adjust buffer size as needed
         snprintf(temp, sizeof(temp), "<h3>%s</h3><p><strong>Code</strong></p><pre class='line-numbers'><code class='language-c'>%s</code></pre><p><strong>Output</strong></p>", qLine, text);
@@ -96,6 +74,7 @@ int main() {
         while (token != NULL) {
             snprintf(temp, sizeof(temp), "<img src=\"%s\">", token);
             strcat(htmlcode, temp);
+
             token = strtok(NULL, " ");
         }
         strcat(htmlcode, "<hr>");
@@ -107,9 +86,10 @@ int main() {
     // Writing to file
     FILE *outputFile = fopen("report.html", "w");
     if (outputFile == NULL) {
-        perror("Error opening file");
+        printf("Error opening HTML file\n");
         return 1;
     }
+    //write htmlCode
     fputs(htmlcode, outputFile);
     fclose(outputFile);
 
