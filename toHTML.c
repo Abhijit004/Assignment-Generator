@@ -41,7 +41,7 @@ int main () {
     char* htmlcode = (char *) malloc(1000000);
 
     snprintf(htmlcode, 10000000,
-             "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Report</title><link rel=\"stylesheet\" href=\"prism.css\"/><script src=\"prism.js\" defer></script></head><body class='stackedit'><div class='stackedit__html'><hr>Name: %s<br>Group: %s<br>RollNo: %s<br><h1>&#128203;Assignment %s</h1>",
+             "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Report</title><link rel=\"stylesheet\" href=\"prism.css\"/><script src=\"prism.js\" defer></script></head><body class='stackedit'><div class='stackedit__html'><hr><p contenteditable=\"true\">Name: %s<br>Group: %s<br>RollNo: %s<br></p><h1 contenteditable=\"true\">&#128203;Assignment %s</h1>",
              name, group, roll, assignmentNo);
 
     // Menu driven input 
@@ -68,12 +68,12 @@ int main () {
         replaceSubstring(text, ">", "&gt;");
 
         char temp[10000]; // Adjust buffer size as needed
-        snprintf(temp, sizeof(temp), "<h3>%s</h3><p><strong>Code</strong></p><pre class='line-numbers'><code class='language-c'>%s</code></pre><p><strong>Output</strong></p>", qLine, text);
+        snprintf(temp, sizeof(temp), "<h3 contenteditable=\"true\">%s</h3><pre class='line-numbers'><code class='language-c'>%s</code></pre>", qLine, text);
         strcat(htmlcode, temp);
 
         char *token = strtok(output, " ");
         while (token != NULL) {
-            snprintf(temp, sizeof(temp), "<img src=\"%s\">", token);
+            snprintf(temp, sizeof(temp), "<div class=\"imgdiv\"><img src=\"%s\"></div>", token);
             strcat(htmlcode, temp);
 
             token = strtok(NULL, " ");

@@ -33,7 +33,7 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 0.5em;
+	padding: 0.2em;
 	margin: .5em 0;
 	overflow: auto;
 	border-radius: 0.3em;
@@ -128,7 +128,7 @@ pre[class*="language-"] {
 
 pre[class*="language-"].line-numbers {
 	position: relative;
-	padding-left: 3.8em;
+	padding-left: 3.2em;
 	counter-reset: linenumber;
 	white-space: pre-wrap;
 }
@@ -142,7 +142,7 @@ pre[class*="language-"].line-numbers>code {
 	position: absolute;
 	pointer-events: none;
 	top: -0.15em;
-	left: -3.8em;
+	left: -3.2em;
 	width: 3em;
 	/* works for line-numbers below 1000 lines */
 	font-size: 0.98em;
@@ -169,6 +169,7 @@ pre[class*="language-"].line-numbers>code {
 	text-align: right;
 	background-color: hsl(70, 8%, 20%);
 	border-right: 2px solid #999;
+	line-height: 1.5rem;
 }
 
 
@@ -223,8 +224,7 @@ ul {
 }
 
 h1,
-h2,
-h3 {
+h2{
 	margin: 1em 0;
 	/* line-height: 1.33 */
 }
@@ -299,10 +299,42 @@ pre {
 	width: 100;
 }
 
-@media print {
+h3 {
+	font-weight: 100;
+}
 
+pre::after {
+	content: 'language-C';
+	position: absolute;
+	top: 0.6em;
+	right: 0.4em;
+	font-size: 0.9em;
+	background-color: hsl(70, 8%, 25%);
+	border-radius: 0.3em;
+	color: hsl(0, 0%, 85%);;
+	padding: 0.3em;
+}
+
+@media print {
 	/* Adjust page size for printing */
 	@page {
 		size: 310mm 850mm;
 	}
+}
+
+.imgdiv::before {
+	content: 'OUTPUT';
+	position: relative;
+	display: block;
+	bottom: -0.2em;
+	font-size: 0.9em;
+	background-color: #272822;
+	border-radius: 0.3em 0.3em 0em 0em;
+	color: hsl(0, 0%, 85%);;
+	padding: 0.5em;
+}
+
+*[contenteditable="true"]:focus {
+	background-color: hsl(80, 76%, 75%);
+	border: 2px solid hsl(80, 76%, 45%);
 }
