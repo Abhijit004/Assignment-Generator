@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400&family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400');
 /* PrismJS 1.29.0
 https://prismjs.com/download.html#themes=prism-okaidia&languages=clike+c&plugins=line-numbers */
 /**
@@ -12,8 +12,8 @@ pre[class*="language-"] {
 	color: #f8f8f2;
 	background: none;
 	/* text-shadow: 0 1px rgba(0, 0, 0, 0.3); */
-	font-family: 'Fira Mono';
-	font-size: 1em;
+	font-family: 'Consolas';
+	font-size: 1.06em;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -107,6 +107,8 @@ pre[class*="language-"] {
 
 .token.keyword {
 	color: #66d9ef;
+	font-style: italic;
+	/* font-family: 'consolas'; */
 }
 
 .token.regex,
@@ -169,7 +171,7 @@ pre[class*="language-"].line-numbers>code {
 	text-align: right;
 	background-color: hsl(70, 8%, 20%);
 	border-right: 2px solid #999;
-	line-height: 1.5rem;
+	line-height: 1.8rem;
 }
 
 
