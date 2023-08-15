@@ -1,6 +1,5 @@
 ﻿# Assignment-Generator
-<img width="948" alt="banner" src="https://github.com/Abhijit004/Assignment-Generator/assets/133393475/2b391046-ebc5-4142-b968-f013dd528e61">
-
+<img width="948" alt="banner" src="https://github.com/Abhijit004/Assignment-Generator/assets/133393475/7ee36ac7-7925-4e39-8853-834c9b66b466">
 
 A small C program to take filename inputs and generate a Assignment report out of them with html and css.
 ## Aim behind this Program :gem:

@@ -302,7 +302,7 @@ pre {
 }
 
 h3 {
-	font-weight: 100;
+	font-weight: 600;
 }
 
 pre::after {
@@ -339,4 +339,9 @@ pre::after {
 *[contenteditable="true"]:focus {
 	background-color: hsl(80, 76%, 75%);
 	border: 2px solid hsl(80, 76%, 45%);
+}
+
+p {
+	font-weight: 600;
+	font-family: inherit;
 }
