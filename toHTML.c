@@ -41,7 +41,7 @@ int main () {
     char* htmlcode = (char *) malloc(1000000);
 
     snprintf(htmlcode, 10000000,
-             "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Report</title><link rel=\"stylesheet\" href=\"prism.css\"/><script src=\"prism.js\" defer></script></head><body class='stackedit'><div class='stackedit__html'><hr><p contenteditable=\"true\">Name: %s<br>Group: %s<br>RollNo: %s<br></p><h1 contenteditable=\"true\">&#128203;Assignment %s</h1>",
+             "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Report</title><link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/Abhijit004/Assignment-Generator/prism.css\"/><script src=\"https://cdn.jsdelivr.net/gh/Abhijit004/Assignment-Generator/prism.js\" defer></script></head><body class='stackedit'><div class='stackedit__html'><hr><p contenteditable=\"true\">Name: %s<br>Group: %s<br>RollNo: %s<br></p><h1 contenteditable=\"true\">&#128203;Assignment %s</h1>",
              name, group, roll, assignmentNo);
 
     // Menu driven input 

@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 /* PrismJS 1.29.0
 https://prismjs.com/download.html#themes=prism-okaidia&languages=clike+c&plugins=line-numbers */
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
  * @author ocodia
- */
+ * edited a bit by me to make it akin to monokai*/
 
 code[class*="language-"],
 pre[class*="language-"] {
@@ -108,7 +108,6 @@ pre[class*="language-"] {
 .token.keyword {
 	color: #66d9ef;
 	font-style: italic;
-	/* font-family: 'consolas'; */
 }
 
 .token.regex,
@@ -173,12 +172,9 @@ pre[class*="language-"].line-numbers>code {
 	border-right: 2px solid #999;
 	line-height: 1.8rem;
 }
-
-
 /*stackedit css*/
 
 /* markdown css*/
-
 html {
 	line-height: 1.15;
 	-ms-text-size-adjust: 100%;
@@ -189,12 +185,12 @@ body {
 	margin: 0;
 	background-color: hsl(0, 0%, 100%);
 	color: #272822;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Roboto Slab', serif;
 }
 
 h1 {
-	font-size: 3em;
-	margin: .67em 0;
+	font-size: 3.1em;
+	margin: 1em 0;
 }
 
 hr {
@@ -214,8 +210,6 @@ img {
 	border-radius: 0.3em;
 }
 
-
-
 blockquote,
 dl,
 ol,
@@ -223,12 +217,6 @@ p,
 pre,
 ul {
 	margin: 1.2em 0
-}
-
-h1,
-h2{
-	margin: 1em 0;
-	/* line-height: 1.33 */
 }
 
 h1:after {
@@ -250,29 +238,10 @@ dt {
 	font-weight: 700
 }
 
-
-
 hr {
 	border: 0;
 	border-top: 4px solid hsla(0, 0%, 50%, .33);
 	margin: 2em 0
-}
-
-.toc ul {
-	list-style-type: none;
-	padding-left: 20px
-}
-
-table {
-	background-color: transparent;
-	border-collapse: collapse;
-	border-spacing: 0
-}
-
-td,
-th {
-	border-right: 1px solid #dcdcdc;
-	padding: 8px 12px
 }
 
 td:last-child,
@@ -329,9 +298,8 @@ pre::after {
 	position: relative;
 	display: block;
 	bottom: -0.2em;
-	font-size: 0.9em;
 	background-color: #272822;
-	border-radius: 0.3em 0.3em 0em 0em;
+	border-radius: 0.3em 1.2em 0em 0em;
 	color: hsl(0, 0%, 85%);;
 	padding: 0.5em;
 }
