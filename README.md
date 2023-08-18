@@ -44,12 +44,12 @@ gcc toHTML.c -o toHTML && toHTML
 * **[Optional]** If you want, that the pdf does not break into pages, I have a trick for you. Add this text into the generated report.html file inside headers:
 ```html
 <style>
-	@media print {
-		/* Adjust page size for printing */
-		@page {
-			size: 310mm 500mm; /*increase the '500mm'*/
-		}
-	}
+    @media print {
+        /* Adjust page size for printing */
+        @page {
+            size: 310mm 500mm; /*increase the '500mm'*/
+        }
+    }
 </style>
 ```
 Increase the `500mm` to as large as you want to have your whole content set in 1 page.
