@@ -1288,12 +1288,12 @@ Prism.languages.clike = {
 			'punctuation': /[.\\]/
 		}
 	},
-	'property': /\b(?:break|catch|continue|do|else|finally|for|function|if|in|instanceof|new|null|return|throw|try|while)\b/,
+	'property': /\b(?:break|catch|continue|do|else|finally|for|function|if|in|instanceof|new|null|return|throw|try|while|switch|typedef|case|default)\b/,
 	'important' : /(?<=\b\w+\s)\s?\b\w+\b\s?(?=\()/,
 	'boolean': /\b(?:false|true)\b/,
 	'function': /\b\w+(?=\()/,
 	'number': /\b0x[\da-f]+\b|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:e[+-]?\d+)?/i,
-	'operator': /[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/,
+	// 'operator': /[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/,
 	'punctuation': /[{}[\];(),.:]/,
 };
 
@@ -1314,7 +1314,8 @@ Prism.languages.c = Prism.languages.extend('clike', {
 	'keyword': /\b(?:_Alignas|_Alignof|_Atomic|_Bool|_Complex|_Generic|_Imaginary|_Noreturn|_Static_assert|_Thread_local|__attribute__|asm|auto|break|case|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|inline|int|long|register|return|short|signed|sizeof|static|struct|switch|typedef|typeof|union|unsigned|void|volatile|while)\b/,
 	'function': /\b[a-z_]\w*(?=\s*\()/i,
 	'number': /(?:\b0x(?:[\da-f]+(?:\.[\da-f]*)?|\.[\da-f]+)(?:p[+-]?\d+)?|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:e[+-]?\d+)?)[ful]{0,4}/i,
-	'operator': />>=?|<<=?|->|([-+&|:])\1|[?:~]|[-+*/%&|^!=<>]=?/
+	'operator': />>=?|<<=?|->|([-+&|:])\1|[?:~]|[-+*/%&|^!=<>]=?/,
+	'number':/\b[A-Z]+\b/
 });
 
 Prism.languages.insertBefore('c', 'string', {

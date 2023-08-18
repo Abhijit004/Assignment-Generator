@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 /* PrismJS 1.29.0
 https://prismjs.com/download.html#themes=prism-okaidia&languages=clike+c&plugins=line-numbers */
 /**
@@ -12,8 +13,8 @@ pre[class*="language-"] {
 	color: #f8f8f2;
 	background: none;
 	/* text-shadow: 0 1px rgba(0, 0, 0, 0.3); */
-	font-family: 'Consolas';
-	font-size: 1.06em;
+	font-family: 'consolas', 'monospace';
+	font-size: 1.05em;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -271,6 +272,7 @@ pre {
 }
 
 h3 {
+	line-height: 1.3em;
 	font-weight: 600;
 }
 
