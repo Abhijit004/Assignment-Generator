@@ -2,7 +2,7 @@
 <img width="948" alt="banner" src="https://github.com/Abhijit004/Assignment-Generator/assets/133393475/7ee36ac7-7925-4e39-8853-834c9b66b466">
 
 A small C program to take filename inputs and generate a Assignment report out of them with html, css, js.
-## :dart: Aim behind this Program 
+## :dart: Aim behind this Project 
 When it comes to creating a proper report of any assignment(containing codes and all), I wished if there could exist a program which would _take my filepaths as input and generate the report_ for me, where every code block would be prettified(in word editor, a picture insertion ~ destruction :sweat:). Since I failed to find one, I created one for myself :sweat_smile:
 
 ## :hammer_and_pick: Some Implementation details 
@@ -59,6 +59,11 @@ Increase the `500mm` to as large as you want to have your whole content set in 1
 * Give correct **paths** to the files (c files and png files) else you may face errors.
 * The user **does not require to download the `prism.js` and `prism.css` files** for the tasks. It has been included in the repo for CDN to work.
 * Currectly there is no feature to edit the code within HTML just like the question statements and all, assuming that the report will be made after finalising all the C codes ( However, it can be easily made possible with **[CodeMirror](https://codemirror.net/)**, *a code editor component for the web.* ).
+* The project is tested under Chrome Version `115.0.5790.173 (Official Build) (64-bit)`. If your browser does not render the html styling properly,
+  * Try downloading the css and js files and link them locally
+  * change the webbrowser
+
+  If the problem still persistes, it might be due to low version of webbrowser or some network proxy which is blocking the CDN links (though, it is highly unlikely that it may not render in Chrome)
 
 ## Licence
 The project is under [MIT License](./LICENSE).
